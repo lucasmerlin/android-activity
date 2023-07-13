@@ -410,4 +410,8 @@ impl AndroidAppInner {
         let na = self.native_activity();
         unsafe { util::try_get_path_from_ptr((*na).obbPath) }
     }
+
+    pub fn clear_motion_event_filter(&self) {}
+
+    pub fn enable_pointer_event_axis(&self, axis: i32) {}
 }
