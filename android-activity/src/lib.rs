@@ -860,6 +860,14 @@ impl AndroidApp {
     pub fn obb_path(&self) -> Option<std::path::PathBuf> {
         self.inner.read().unwrap().obb_path()
     }
+
+    pub fn clear_motion_event_filter(&self) {
+        self.inner.read().unwrap().clear_motion_event_filter();
+    }
+
+    pub fn enable_pointer_event_axis(&self, axis: i32) {
+        self.inner.read().unwrap().enable_pointer_event_axis(axis);
+    }
 }
 
 #[test]

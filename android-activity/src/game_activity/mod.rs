@@ -630,6 +630,20 @@ impl AndroidAppInner {
             try_get_path_from_ptr((*(*app_ptr).activity).obbPath)
         }
     }
+
+    pub fn clear_motion_event_filter(&self) {
+        unsafe {
+            let app_ptr = self.native_app.as_ptr();
+            (*app_ptr).motionEventFilter = None;
+        }
+    }
+
+    pub fn enable_pointer_event_axis(&self, axis: i32) {
+        unsafe {
+            let app_ptr = self.native_app.as_ptr();
+            ffi::GameActivityPointerAxes_enableAxis(axis as std::os::raw::c_int);
+        }
+    }
 }
 
 struct MotionEventsLendingIterator {

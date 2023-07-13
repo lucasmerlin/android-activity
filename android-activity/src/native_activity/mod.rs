@@ -543,4 +543,8 @@ impl<'a> InputIteratorInner<'a> {
             false
         }
     }
+
+    pub fn clear_motion_event_filter(&self) {}
+
+    pub fn enable_pointer_event_axis(&self, axis: i32) {}
 }
