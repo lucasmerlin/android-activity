@@ -1,9 +1,12 @@
+<!-- markdownlint-disable MD022 MD024 MD032 -->
+
 # Changelog
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-
+### Changed
+- GameActivity updated to 2.0.2 (requires the corresponding 2.0.2 `.aar` release from Google) ([#88](https://github.com/rust-mobile/android-activity/pull/88))
 
 ## [0.4.2] - 2022-02-16
 ### Changed
@@ -19,7 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Removed some overly-verbose logging in the `native-activity` backend ([#49](https://github.com/rust-mobile/android-activity/pull/49))
 ### Removed
-- Most of the examples were moved to https://github.com/rust-mobile/rust-android-examples ([#50](https://github.com/rust-mobile/android-activity/pull/50))
+- Most of the examples were moved to <https://github.com/rust-mobile/rust-android-examples> ([#50](https://github.com/rust-mobile/android-activity/pull/50))
 
 ## [0.4] - 2022-11-10
 ### Changed
