@@ -344,6 +344,7 @@ impl AndroidAppInner {
             } else {
                 0
             };
+            ffi::GameActivity_setImeEditorInfo(activity, 1 | 16384, 0, 0);
             ffi::GameActivity_showSoftInput(activity, flags);
         }
     }
