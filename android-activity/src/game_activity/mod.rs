@@ -136,7 +136,7 @@ impl AndroidApp {
         // AConfiguration_delete()
         let config = Configuration::clone_from_ptr(NonNull::new_unchecked((*ptr.as_ptr()).config));
 
-        Self {
+        let s = Self {
             inner: Arc::new(RwLock::new(AndroidAppInner {
                 jvm,
                 native_app: NativeAppGlue { ptr },
@@ -146,7 +146,13 @@ impl AndroidApp {
                 key_maps: Mutex::new(HashMap::new()),
                 input_receiver: Mutex::new(None),
             })),
-        }
+        };
+
+        // Listen for motion events on any device (Default is to only listen for touch screen events
+        s.clear_motion_event_filter();
+        // Enable pointer pressure detection
+        s.enable_pointer_event_axis(2);
+        s
     }
 }
 
